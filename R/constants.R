@@ -6,6 +6,9 @@
 #' \describe{
 #' \item{\code{.miaDashDefaultPanels}}{List of panel names in the default layout of miaDash.}
 #' \item{\code{.miaDashOtherPanels}}{List of panel names not in the default layout of miaDash.}
+#' \item{\code{.rdsFormats}}{List of readable RDS object formats.}
+#' \item{\code{.foreignFormats}}{List of readable foreign object formats.}
+#' \item{\code{.exportFormats}}{List of exportable object formats.}
 #' \item{\code{.transformMethods}}{List of transformations applicable to assays.}
 #' \item{\code{.alphaMetrics}}{List of alpha diversity metrics.}
 #' \item{\code{.betaMetrics}}{List of beta diversity metrics.}
@@ -39,7 +42,7 @@ NULL
 .foreignFormats <- c("BIOM", "HUMAnN", "MetaPhlAn", "Mothur", "QIIME2")
 
 #' @rdname constants
-.exportFormats <- c("TreeSE", "phyloseq", "BIOM", "QIIME2", "Mothur")
+.exportFormats <- c("TreeSE", "phyloseq", "BIOM", "QIIME2", "Mothur", "Raw")
 
 #' @rdname constants
 .transformMethods <- c("alr", "chi.square", "clr", "css", "frequency",

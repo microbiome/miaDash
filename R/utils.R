@@ -60,7 +60,6 @@ NULL
     classes <- vapply(mia_datasets, function(x) class(get(x)), character(1L))
     mia_datasets <- mia_datasets[classes == "TreeSummarizedExperiment"]
     
-    mia_datasets[c(1L, 2L)] <- mia_datasets[c(2L, 1L)]
     return(mia_datasets)
 }
 
