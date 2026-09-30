@@ -44,7 +44,7 @@
                 saveRDS(pseq, file)
             },
             BIOM = .write_biom(rObjects$tse, file, input$export.assay),
-            .write_foreign(file, rObjects$tse, input$export.format, input$export.assay)
+            .write_foreign(file, rObjects$tse, input$export_format, input$export.assay)
         )
     )
     # nocov end
@@ -65,14 +65,20 @@
 
 #' @importFrom utils zip
 .write_foreign <- function(file, tse, as, assay.type){
+    # Select main assay
+    assay(tse) <- assay(tse, assay.type = assay.type)
     # Select exporter by format
     FUN <- switch(
         as, Raw = exportRaw, QIIME2 = exportQIIME2, Mothur = exportMothur
     )
     # Write object to directory
     dpath <- tempfile()
-    FUN(rObjects$tse, dpath, assay.type)
+    FUN(tse, dpath)
     # Compress directory
-    zip(file, files = list.files(dpath, full.names = TRUE), flags = "-r9Xj")
+    zip(
+        file,
+        files = list.files(dpath, full.names = TRUE, recursive = TRUE),
+        flags = "-r9Xj"
+    )
     return(invisible)
 }
