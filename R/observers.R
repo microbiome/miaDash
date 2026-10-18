@@ -507,7 +507,7 @@
 .print_welcome_message <- function(){
     .print_message(
         title = "Welcome to the Microbiome Analysis Dashboard! \U0001f9a0",
-        tags$img(src = "assets/mia_logo.png", height = "180px",
+        tags$img(src = "www/mia_logo.png", height = "180px",
             style = paste("display: block; margin-left: auto;",
             "margin-right: auto; margin-bottom: 10px;")),
         "miaDash is actively maintained by the",

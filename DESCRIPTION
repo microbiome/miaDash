@@ -1,5 +1,5 @@
 Package: miaDash
-Version: 1.5.1
+Version: 1.5.2
 Authors@R: 
     c(person(given = "Giulio", family = "Benedetti", role = c("aut", "cre"),
            email = "giulio.benedetti@utu.fi",
@@ -54,6 +54,6 @@ Suggests:
 URL: https://github.com/microbiome/miaDash
 BugReports: https://github.com/microbiome/miaDash/issues
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.3.3
 VignetteBuilder: knitr
 Config/testthat/edition: 3
+Config/roxygen2/version: 8.0.0

@@ -60,7 +60,6 @@ NULL
     classes <- vapply(mia_datasets, function(x) class(get(x)), character(1L))
     mia_datasets <- mia_datasets[classes == "TreeSummarizedExperiment"]
     
-    mia_datasets[c(1L, 2L)] <- mia_datasets[c(2L, 1L)]
     return(mia_datasets)
 }
 
@@ -99,22 +98,17 @@ NULL
             class(e) <- setdiff(class(e), "call")
             attr(e, "call") <- NULL
             
-            .print_message(paste(e, collapse = " "))
+            .print_message(paste(e, collapse = " "), footer = NULL)
             return(rObjects$tse)
         })
         # nocov end
-    
     return(tse)
 }
 
 #' @rdname utils
 .print_message <- function(..., title = "Invalid input:") {
-
     # nocov start
-    showModal(modalDialog(
-        title = title, ...,
-        easyClose = TRUE, footer = NULL
-    ))
+    showModal(modalDialog(title = title, ..., easyClose = TRUE))
     # nocov end
 }
 
