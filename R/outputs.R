@@ -25,13 +25,14 @@
 }
 
 #' @rdname render_output
-#' @importFrom mia convertToPhyloseq
+#' @importFrom mia convertToPhyloseq exportRaw exportQIIME2 exportMothur
 .render_download <- function(input, output, rObjects){
     # nocov start
     output$download <- downloadHandler(
         filename = function(){
-            suffix <- switch(input$export_format, TreeSE = "rds",
-                phyloseq = "rds", BIOM = "biom", Mothur = "zip", QIIME2 = "zip")
+            suffix <- switch(input$export_format,
+                TreeSE = "rds", phyloseq = "rds", BIOM = "biom",
+                Mothur = "zip", QIIME2 = "zip", Raw = "zip")
             
             paste0(tolower(input$export_format), "-", Sys.Date(), ".", suffix)
         },
@@ -42,31 +43,42 @@
                 pseq <- convertToPhyloseq(rObjects$tse, assay.type = input$export.assay)
                 saveRDS(pseq, file)
             },
-            .write_foreign(file, rObjects$tse, input$export.assay, input$export_format)
+            BIOM = .write_biom(rObjects$tse, file, input$export.assay),
+            .write_foreign(file, rObjects$tse, input$export_format, input$export.assay)
         )
     )
     # nocov end
     invisible(NULL)
 }
 
-#' @importFrom utils zip
 #' @importFrom SummarizedExperiment assay assay<-
-#' @importFrom rbiom as_rbiom write_biom write_mothur write_qiime2
-.write_foreign <- function(file, tse, assay.type, as){
-    
-    assay(tse) <- assay(tse, assay.type)
+#' @importFrom rbiom as_rbiom write_biom
+.write_biom <- function(tse, file, assay.type){
+    # Select main assay
+    assay(tse) <- assay(tse, assay.type = assay.type)
+    # Convert tse to biom
     biom <- as_rbiom(tse)
-    
-    if( as == "BIOM" ){
-        write_biom(biom, file)
-        return(invisible(NULL))
-    }
-    
-    temp_dir <- tempfile()
-    
-    FUN <- switch(as, Mothur = write_mothur, QIIME2 = write_qiime2)
-    FUN(biom, temp_dir)
-    
-    zip(file, files = list.files(temp_dir, full.names = TRUE), flags = "-r9Xj")
-    invisible(NULL)
+    # Write biom to file
+    write_biom(biom, file)
+    return(invisible)
+}
+
+#' @importFrom utils zip
+.write_foreign <- function(file, tse, as, assay.type){
+    # Select main assay
+    assay(tse) <- assay(tse, assay.type = assay.type)
+    # Select exporter by format
+    FUN <- switch(
+        as, Raw = exportRaw, QIIME2 = exportQIIME2, Mothur = exportMothur
+    )
+    # Write object to directory
+    dpath <- tempfile()
+    FUN(tse, dpath)
+    # Compress directory
+    zip(
+        file,
+        files = list.files(dpath, full.names = TRUE, recursive = TRUE),
+        flags = "-r9Xj"
+    )
+    return(invisible)
 }

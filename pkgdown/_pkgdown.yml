@@ -1,4 +1,12 @@
+url: https://microbiome.github.io/miaDash
 destination: docs
+
+template:
+  bootstrap: 5
+  light-switch: true
+  bslib:
+    navbar-bg: "#0087af"
+
 reference:
 - title: App
 - subtitle: Main
