@@ -21,8 +21,8 @@
 #' @keywords internal
 #' @name constants
 #' @aliases .miaDashDefaultPanels .miaDashOtherPanels .rdsFormats
-#' .foreignFormats .exportFormats .transformMethods .qualityMetrics
-#' .alphaMetrics .betaMetrics .betaMethods .clustMethods .DmmCriteria
+#'   .foreignFormats .exportFormats .transformMethods .qualityMetrics
+#'   .alphaMetrics .betaMetrics .betaMethods .clustMethods .DmmCriteria
 NULL
 
 #' @rdname constants

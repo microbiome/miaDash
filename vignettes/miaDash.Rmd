@@ -34,10 +34,10 @@ knitr::opts_chunk$set(
 
 This notebook provides a practical introduction to the Microbiome Analysis
 Dashboard (miaDash), an interactive app to analyse and explore microbiome data.
-Feel free to try it online at
-[this address](miadash-microbiome.2.rahtiapp.fi/) with your data or one of
-the ready-to-use example datasets. Here, its usage and functionality are
-described in more detail.
+Feel free to try it online on Galaxy at
+[this address](https://usegalaxy.eu/?tool_id=interactive_tool_miadash) with your
+data or one of the ready-to-use example datasets. Here, its usage and
+functionality are described in more detail.
 
 ## Motivation
 

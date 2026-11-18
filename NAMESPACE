@@ -2,78 +2,100 @@
 
 export(miaDash)
 importFrom(S4Vectors,DataFrame)
-importFrom(SummarizedExperiment,"assay<-")
-importFrom(SummarizedExperiment,assay)
-importFrom(SummarizedExperiment,assayNames)
-importFrom(SummarizedExperiment,colData)
-importFrom(SummarizedExperiment,rowData)
-importFrom(TreeSummarizedExperiment,TreeSummarizedExperiment)
-importFrom(TreeSummarizedExperiment,colTreeNames)
-importFrom(TreeSummarizedExperiment,rowTree)
-importFrom(TreeSummarizedExperiment,rowTreeNames)
+importFrom(SummarizedExperiment,
+  "assay<-",
+  assay,
+  assayNames,
+  colData,
+  rowData
+)
+importFrom(TreeSummarizedExperiment,
+  TreeSummarizedExperiment,
+  colTreeNames,
+  rowTree,
+  rowTreeNames
+)
 importFrom(ape,read.tree)
-importFrom(bluster,DmmParam)
-importFrom(bluster,HclustParam)
-importFrom(bluster,KmeansParam)
-importFrom(bluster,NNGraphParam)
-importFrom(htmltools,HTML)
-importFrom(htmltools,br)
-importFrom(htmltools,div)
-importFrom(htmltools,tagList)
-importFrom(htmltools,tags)
+importFrom(bluster,
+  DmmParam,
+  HclustParam,
+  KmeansParam,
+  NNGraphParam
+)
+importFrom(htmltools,
+  HTML,
+  br,
+  div,
+  tagList,
+  tags
+)
 importFrom(iSEE,iSEE)
-importFrom(iSEEtree,.check_all_panels)
-importFrom(iSEEtree,AbundanceDensityPlot)
-importFrom(iSEEtree,AbundancePlot)
-importFrom(iSEEtree,ColumnGraphPlot)
-importFrom(iSEEtree,ColumnTreePlot)
-importFrom(iSEEtree,LoadingPlot)
-importFrom(iSEEtree,PrevalencePlot)
-importFrom(iSEEtree,RDAPlot)
-importFrom(iSEEtree,RowGraphPlot)
-importFrom(iSEEtree,RowTreePlot)
-importFrom(iSEEtree,ScreePlot)
-importFrom(mia,addAlpha)
-importFrom(mia,addCluster)
-importFrom(mia,addHierarchyTree)
-importFrom(mia,addMDS)
-importFrom(mia,addNMDS)
-importFrom(mia,addPrevalence)
-importFrom(mia,addPrevalentAbundance)
-importFrom(mia,addRDA)
-importFrom(mia,agglomerateByRank)
-importFrom(mia,convertToPhyloseq)
-importFrom(mia,exportMothur)
-importFrom(mia,exportQIIME2)
-importFrom(mia,exportRaw)
-importFrom(mia,getTaxonomyLabels)
-importFrom(mia,importBIOM)
-importFrom(mia,importHUMAnN)
-importFrom(mia,importMetaPhlAn)
-importFrom(mia,importMothur)
-importFrom(mia,importQIIME2)
-importFrom(mia,subsetByPrevalent)
-importFrom(mia,subsetByRare)
-importFrom(mia,taxonomyRanks)
-importFrom(mia,transformAssay)
-importFrom(rbiom,as_rbiom)
-importFrom(rbiom,write_biom)
+importFrom(iSEEtree,
+  .check_all_panels,
+  AbundanceDensityPlot,
+  AbundancePlot,
+  ColumnGraphPlot,
+  ColumnTreePlot,
+  LoadingPlot,
+  PrevalencePlot,
+  RDAPlot,
+  RowGraphPlot,
+  RowTreePlot,
+  ScreePlot
+)
+importFrom(mia,
+  addAlpha,
+  addCluster,
+  addHierarchyTree,
+  addMDS,
+  addNMDS,
+  addPrevalence,
+  addPrevalentAbundance,
+  addRDA,
+  agglomerateByRank,
+  convertToPhyloseq,
+  exportMothur,
+  exportQIIME2,
+  exportRaw,
+  getTaxonomyLabels,
+  importBIOM,
+  importHUMAnN,
+  importMetaPhlAn,
+  importMothur,
+  importQIIME2,
+  subsetByPrevalent,
+  subsetByRare,
+  taxonomyRanks,
+  transformAssay
+)
+importFrom(rbiom,
+  as_rbiom,
+  write_biom
+)
 importFrom(rintrojs,introjs)
-importFrom(scater,runMDS)
-importFrom(scater,runPCA)
+importFrom(scater,
+  runMDS,
+  runPCA
+)
 importFrom(scuttle,addPerCellQC)
 importFrom(shiny,stopApp)
 importFrom(shinyAce,aceEditor)
 importFrom(shinyWidgets,addSpinner)
-importFrom(shinydashboard,box)
-importFrom(shinydashboard,dashboardBody)
-importFrom(shinydashboard,dashboardHeader)
-importFrom(shinydashboard,dashboardPage)
-importFrom(shinydashboard,dashboardSidebar)
-importFrom(shinyjs,disable)
-importFrom(shinyjs,enable)
+importFrom(shinydashboard,
+  box,
+  dashboardBody,
+  dashboardHeader,
+  dashboardPage,
+  dashboardSidebar
+)
+importFrom(shinyjs,
+  disable,
+  enable
+)
 importFrom(stats,as.formula)
-importFrom(utils,data)
-importFrom(utils,packageVersion)
-importFrom(utils,read.table)
-importFrom(utils,zip)
+importFrom(utils,
+  data,
+  packageVersion,
+  read.table,
+  zip
+)

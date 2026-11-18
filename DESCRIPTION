@@ -17,7 +17,7 @@ Description:
     perform analyses. Datasets can be imported, manipulated, analysed and
     visualised with a user-friendly interface.
 biocViews: Microbiome, Software, Visualization, GUI, ShinyApps, DataImport
-License: Artistic-2.0
+License: Artistic-2.0 | file LICENSE
 Encoding: UTF-8
 Depends:
     R (>= 4.4.0),
@@ -51,9 +51,9 @@ Suggests:
     remotes,
     rmarkdown,
     testthat (>= 3.0.0)
-URL: https://github.com/microbiome/miaDash
+URL: https://github.com/microbiome/miaDash, https://microbiome.github.io/miaDash
 BugReports: https://github.com/microbiome/miaDash/issues
 Roxygen: list(markdown = TRUE)
 VignetteBuilder: knitr
 Config/testthat/edition: 3
-Config/roxygen2/version: 8.0.0
+Config/roxygen2/version: 8.1.1

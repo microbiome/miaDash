@@ -7,11 +7,16 @@
 [![codefactor](https://www.codefactor.io/repository/github/microbiome/miadash/badge)](https://www.codefactor.io/repository/github/microbiome/miadash)
 
 The goal of miaDash is to provide a user-friendly interface to import,
-manipulate, analyse and visualise TreeSummarizedExperiment objects.
+manipulate, analyse and visualise TreeSummarizedExperiment objects. It is based
+on the [mia package](https://doi.org/10.18129/B9.bioc.mia) for microbiome
+analysis and the [iSEEtree Shiny app](https://doi.org/10.18129/B9.bioc.iSEEtree).
+For a brief introduction to the dashboard, read
+[this tutorial](https://microbiome.github.io/miaDash/articles/miaDash.html).
 
 ## Usage
 
-miaDash is available online at [this address](https://miadash-microbiome.2.rahtiapp.fi/).
+miaDash is openly available on Galaxy at
+[this address](https://usegalaxy.eu/?tool_id=interactive_tool_miadash).
 While suitable for small and medium datasets, the online version may slow down
 when very large datasets are analysed. In this case, the app can be installed
 and run locally. Either way, functionality to subset and agglomerate the data is
@@ -32,7 +37,13 @@ Contributors or users interested in the latest functionality can install the
 devel version as follows:
 
 ```
-remotes::install_github("microbiome/miaDash")
+if (!requireNamespace("BiocManager", quietly = TRUE))
+    install.packages("BiocManager")
+
+# Initialize Bioconductor devel version
+BiocManager::install(version = "devel")
+
+BiocManager::install("miaDash")
 ```
 
 ## Example
@@ -45,7 +56,7 @@ library(miaDash)
 
 # Launch miaDash
 if (interactive()) {
-  miaDash()
+    miaDash()
 }
 ```
 
