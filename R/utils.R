@@ -170,7 +170,7 @@ NULL
     rowdata <- mia:::.parse_taxonomy(
         tax_df,
         col.name = "Taxonomy",
-        removeTaxaPrefixes = TRUE
+        prefix.rm = TRUE
     )
 
     rowData(x) <- DataFrame(rowdata)

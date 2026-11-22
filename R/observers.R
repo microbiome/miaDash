@@ -107,8 +107,8 @@
 
                     fun_args <- list(file = input$main.file$datapath,
                         col.data = coldata, tree.file = treefile,
-                        removeTaxaPrefixes = input$rm.tax.pref,
-                        rankFromPrefix = input$rank.from.pref)
+                        prefix.rm = input$rm.tax.pref,
+                        rank.from.prefix = input$rank.from.pref)
               
                 }else if( input$ftype == "HUMAnN" ){
                 
